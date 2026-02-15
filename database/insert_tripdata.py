@@ -1,6 +1,7 @@
 import csv
 import mysql.connector
 from datetime import datetime, timedelta
+from db_config import DB_CONFIG
 
 # File Path and Validation Parameters
 TRIP_DATA_FILE = "yellow_tripdata"
