@@ -10,6 +10,6 @@ def get_connection():
         dbname      = current_app.config["DB_NAME"],
         user        = current_app.config["DB_USER"],
         password    = current_app.config["DB_PASSWORD"],
-        sslmode     = "verify-full",
+        sslmode     = "disable",
         row_factory = dict_row,
     )

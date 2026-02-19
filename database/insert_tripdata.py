@@ -103,11 +103,11 @@ def insert_trips():
     """Read CSV and insert cleaned trips into database."""
     conn = psycopg.connect(
         host     = os.getenv("DB_HOST"),
-        port     = int(os.getenv("DB_PORT", 26257)),
+        port     = int(os.getenv("DB_PORT", 5432)),
         dbname   = os.getenv("DB_NAME"),
         user     = os.getenv("DB_USER"),
         password = os.getenv("DB_PASSWORD"),
-        sslmode  = os.getenv("DB_SSLMODE", "verify-full"),
+        sslmode  = os.getenv("DB_SSLMODE", "disable"),
     )
 
     inserted  = 0

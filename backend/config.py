@@ -1,21 +1,18 @@
-
-
 import sys
 import os
-
+from dotenv import load_dotenv
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, PROJECT_ROOT)
 
-from db_config import DB_CONFIG
-
+load_dotenv(os.path.join(PROJECT_ROOT, ".env"))
 
 class Config:
-    DB_HOST     = DB_CONFIG["host"]
-    DB_PORT     = DB_CONFIG.get("port", 26257)  # Default CockroachDB port
-    DB_NAME     = DB_CONFIG["database"]
-    DB_USER     = DB_CONFIG["user"]
-    DB_PASSWORD = DB_CONFIG["password"]
+    DB_HOST     = os.getenv("DB_HOST")
+    DB_PORT     = int(os.getenv("DB_PORT", 5432))
+    DB_NAME     = os.getenv("DB_NAME")
+    DB_USER     = os.getenv("DB_USER")
+    DB_PASSWORD = os.getenv("DB_PASSWORD")
 
     DEBUG   = False
     TESTING = False
