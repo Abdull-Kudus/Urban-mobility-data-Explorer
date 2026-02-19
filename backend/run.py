@@ -1,12 +1,4 @@
-"""
-run.py
-------
-Application entry point. cd to the backend/ folder to be able to run it
-    then run: python run.py
 
-you can also do this from the project root:
-    python backend/run.py
-"""
 
 import os
 import sys
